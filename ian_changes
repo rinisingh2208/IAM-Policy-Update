@@ -1,0 +1,6 @@
+Copy arn for policy you want to update by aws ui in IAM -> Policies -> <policy name> example arn value arn:aws:iam::508293016219:policy/AdministratorAccess-201910121620
+For that policy in UI go to plicy version and click on edit to view policy json file, copy it
+Save json file locally with file name NewPolicyVersion.json
+Run below command with policy-arn from step1 and json file from step 3 aws iam create-policy-version     --policy-arn arn:aws:iam::508293016219:policy/AdministratorAccess-201910121620    --policy-document file://NewPolicyVersion.json --set-as-default
+If any suntax error then run above command will show prompt saying syntax error, revisit json file in that case, otheriwse you will get applied json file output
+Go to policy UI in aws and see under policy version new version set as default with applied changes
